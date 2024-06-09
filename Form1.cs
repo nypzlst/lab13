@@ -99,13 +99,12 @@ namespace lab13
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            // Get the selected node
+          
             TreeNode selectedNode = e.Node;
 
-            // Check if a node is selected
             if (selectedNode != null)
             {
-                // Display the properties of the selected node
+            
                 string fullPath = selectedNode.FullPath;
                 string name = selectedNode.Text;
                 DirectoryInfo dirInfo = new DirectoryInfo(selectedNode.FullPath);
@@ -113,7 +112,6 @@ namespace lab13
                 DateTime lastAccessTime = dirInfo.LastAccessTime;
                 DateTime lastWriteTime = dirInfo.LastWriteTime;
 
-                // Update the labels or controls with the node properties
                 lblFullPath.Text = fullPath;
                 lblName.Text = name;
                 lblCreationTime.Text = $"Creation time:"+creationTime.ToString();
@@ -122,7 +120,7 @@ namespace lab13
             }
             else
             {
-                // Clear the labels or controls if no node is selected
+      
                 lblFullPath.Text = string.Empty;
                 lblName.Text = string.Empty;
                 lblCreationTime.Text = string.Empty;
